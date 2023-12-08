@@ -1,0 +1,15 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python train.py
+    deps:
+    - path: ds
+      hash: md5
+      md5: 6c778285adc4d1908332e60445bc9775.dir
+      size: 229064958
+      nfiles: 10017
+    outs:
+    - path: ./model.keras
+      hash: md5
+      md5: 851c198aa51f08518f44fc4b7faf75d8
+      size: 64920781

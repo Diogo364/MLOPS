@@ -1,0 +1,30 @@
+artifacts:
+  catdog-classification: # artifact ID (name)
+    path: model.keras
+    type: model
+    desc: Cat versus Dog classification model, ResNet50
+    labels:
+    - custom_model_architecture
+    - classification
+    - two_conv_two_maxpooling
+    meta:
+      framework: tensorflow
+  model:
+    path: model.keras
+    type: model
+metrics:
+- metrics.json
+- dvclive/metrics.json
+params:
+- params.yaml
+- dvclive/params.yaml
+stages:
+  train:
+    cmd: python train.py
+    deps:
+    - ds
+    outs:
+    - ${model.train.model_filepath}
+plots:
+- dvclive/plots/metrics:
+    x: step
