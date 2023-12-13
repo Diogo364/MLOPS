@@ -14,10 +14,8 @@ artifacts:
     type: model
 metrics:
 - metrics.json
-- dvclive/metrics.json
 params:
 - params.yaml
-- dvclive/params.yaml
 stages:
   train:
     cmd: python train.py
@@ -25,6 +23,3 @@ stages:
     - ds
     outs:
     - ${model.train.model_filepath}
-plots:
-- dvclive/plots/metrics:
-    x: step
